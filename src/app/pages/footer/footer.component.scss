@@ -1,0 +1,24 @@
+
+.sm_text {
+    max-width: 350px;
+    /* background: white; */
+    text-align: center;
+    margin: 0 auto;
+    padding: 26px;
+}
+.d_f{
+    display: flex;
+    justify-content: center;
+    font-size: 21px;
+    color: white;
+    column-gap: 24px;
+}
+.blink{
+    animation: blink 1s linear infinite;
+    color: white;
+}
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }

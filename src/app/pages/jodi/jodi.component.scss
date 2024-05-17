@@ -1,0 +1,44 @@
+table.table_border {
+  width: 100%;
+  background: #242424;
+  color: white;
+  border-collapse: collapse;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+td {
+  font-size: 18px;
+  padding: 10px 15px;
+  border: 1px solid #dcd2d2;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  background: #ffffffed;
+}
+th {
+  padding: 15px;
+  border: 1px solid white;
+  text-align: center;
+  color: black;
+}
+thead {
+  background: #efc70f;
+}
+
+@media screen and (max-width: 768px) {
+  th {
+    padding: 3px;
+  }
+  td {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .container_sm {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}

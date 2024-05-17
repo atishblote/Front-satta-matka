@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Black+Ops+One&display=swap');
+@import './global.scss';
+
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bai Jamjuree", sans-serif;
+    background-color: $bg-dark;
+}
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+.btn_primary{
+    cursor: pointer;
+    background-color: transparent;
+    padding: 7px 15px;
+    width: 100%;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+}
+.btn_primary:hover{
+    background-color: $primary-color;
+    color: #000;
+}
+.container_sm{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.d_grid {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    overflow-wrap: break-word;
+    align-items: center;
+}
+.d_grid div:nth-child(odd) {
+    font-size: 12px;
+    color: #585555;
+}

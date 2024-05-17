@@ -1,0 +1,219 @@
+<section class="hero_banner">
+    <div class="container">
+        <div class="inner_body">
+            <div class="banner_text">
+                <div class="sub_text">
+                    WELCOME TO
+                </div>
+                <h1 class="banner_title">PRABHAT WORLD</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main_body">
+    <div class="scroll-left">
+        <p>Text to Display</p>
+    </div>
+    <div>
+        <p>*प्रभात एवं प्रभात नाईट में आने वाले व्यापार रिजल्ट नीचे दिए गए प्रभात वर्ल्ड से ही मान्य रहेगा. इसके अलावा
+            अन्य वेबसाइट उदाहरण: अमर मटका / डायमंड मटका / डीपी बॉस मटका जैसी अन्य वेबसाइट से प्रभात वर्ल्ड का कोई संबंध
+            नही है.</p>
+
+    </div>
+
+    <div class="live_result">
+        <div class="container_sm">
+            <div class="table_title">
+                ****टाइगर अभी जिंदा है****
+            </div>
+            <div class="pannel_table">
+                <div class="bg_stripe">
+                    LIVE RESULTS
+                </div>
+                <div class="data_tabel">
+                    @for(b of liveBazaarData; track b){
+                    @if(b.day_of_week | loadingText){
+                    @if(b.open_time | timeToSeconds){
+                    <div class="table_row bazaar_name" [ngClass]="(b.is_highlighted) ? 'highilited' : ''">
+
+                        <div class="bazaar_title">{{b.bazaar_name}}</div>
+
+                        @if((b.date_time | timeStatus) == 'New'){
+                        <div>
+                            <div class="number">
+                                <span>{{b.open }}</span> -
+                                <span>{{b.jodi}}</span>
+                                @if(b.close){
+                                - <span>{{b.close}}</span>
+                                }
+                            </div>
+                            @if((b.date_time | timeStatus) == 'New'){
+                            <span class="new_entry"><img src="assets/img/new-gif.gif" alt=""></span>
+                            }
+                        </div>
+                        }@else{
+                        <p>Loading...</p>
+                        }
+                    </div>
+                    }
+                    }
+                    }
+
+                    <!-- <div class="table_row highilited">
+                        <div class="bazaar_title">RAJDHANI NIGHT</div>
+                        <div>
+                            <div class="number">
+                                <span>123</span>-
+                                <span>65</span>-
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="table_row ">
+                        <div class="bazaar_title">RAJDHANI NIGHT</div>
+                        <div>
+                            <div class="number">
+                                <span>123</span>-
+                                <span>65</span>-
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table_row ">
+                        <div class="bazaar_title">RAJDHANI NIGHT</div>
+                        <div>
+                            <div class="number">
+                                <span>123</span>-
+                                <span>65</span>-
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <button class="btn_primary" (click)="reload()">Refresh</button>
+            <br>
+            <br>
+            <br>
+
+            <div class="pannel_table">
+                <div class="bg_stripe">
+                    JODI PANNEL
+                </div>
+                <div class="data_tabel">
+                    @for(b of liveBazaarData; track b){
+                    @if(b.bazaar_name){
+
+                    <div class="table_row d_f ">
+                        <div>
+                            <button class="btn_primary" routerLink="jodi/{{b.bazaar_id}}"
+                                [queryParams]="{ name: b.bazaar_name }">Jodi</button>
+                        </div>
+                        <div>
+                            <div class="bazaar_title">{{b.bazaar_name}}</div>
+                            <div class="number" style="margin-bottom: 7px;">
+                                <span>{{b.open}}</span> -
+                                <span> {{b.jodi}}</span> -
+                                @if(b.close){
+                                <span> {{b.close}}</span>
+                                }@else{
+                                <span
+                                    style="vertical-align: -webkit-baseline-middle; display: inline-block; ">***</span>
+                                }
+                            </div>
+                            <div class=" color_light">
+                                <span>{{b.open_time}}</span> -
+                                <span>{{b.close_time}}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn_primary" routerLink="pannel/{{b.bazaar_id}}"
+                                [queryParams]="{ name: b.bazaar_name }">Pannel</button>
+                        </div>
+                    </div>
+
+                    }
+                    }
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!-- starline -->
+            <div class="pannel_table">
+                <div class="bg_stripe">
+                    STARLINE UPDATES
+                </div>
+                <div class="data_tabel d_lg_2">
+                    @for(s of starlineBazarData; track s){
+
+                    <div class="table_row ">
+                       
+                        <div>
+                            <div class="bazaar_title">{{s.name}}</div>
+                            <div class="number" style="margin-bottom: 7px;">
+                                <span>{{s.open}}</span> -
+                                <span> {{s.jodi}}</span>
+                                
+                            </div>
+                            <div class=" color_light">
+                                <span>{{s.time}}</span> -
+                                <span>{{s.date}}</span>
+                            </div>
+                            <div>
+                                <button class="btn_primary" style="width: auto;padding-left: 15px; padding-right: 15px; margin-top: 5px;" routerLink="starline/{{s.id}}"
+                                    [queryParams]="{ name: s.name }">Pannel</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    }
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!-- king -->
+            <div class="pannel_table">
+                <div class="bg_stripe">
+                    KING UPDATES
+                </div>
+                <div class="data_tabel d_lg_2">
+                    @for(s of kingBazarData; track s){
+
+                    <div class="table_row  ">
+                       
+                        <div>
+                            <div class="bazaar_title">{{s.name}}</div>
+                            <div class="number" style="margin-bottom: 7px;">
+                                <span> {{s.jodi}}</span>
+                                
+                            </div>
+                            <div class=" color_light">
+                                <span>{{s.date}}</span>
+                            </div>
+                            <div>
+                                <button class="btn_primary " style="width: auto;padding-left: 15px; padding-right: 15px; margin-top: 5px;" routerLink="king/{{s.id}}"
+                                    [queryParams]="{ name: s.name }">Panel</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

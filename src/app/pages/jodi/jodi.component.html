@@ -1,0 +1,34 @@
+<div class="container_sm">
+    
+    <h1>{{name}} Jodi Chart</h1>
+<table class="table_border">
+    <thead>
+        <tr>
+            <th>Date Range</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Th</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(week of orginzedDataArray ; track week){
+        <tr>
+            <td> {{ week.endDate }} <br>to <br> {{ week.startDate }} </td>
+            <td>{{ getValueForDay(week, 'Monday') }}</td>
+            <td>{{ getValueForDay(week, 'Tuesday') }}</td>
+            <td>{{ getValueForDay(week, 'Wednesday') }}</td>
+            <td>{{ getValueForDay(week, 'Thursday') }}</td>
+            <td>{{ getValueForDay(week, 'Friday') }}</td>
+            <td>{{ getValueForDay(week, 'Saturday') }}</td>
+            <td>{{ getValueForDay(week, 'Sunday') }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+</div>

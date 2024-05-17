@@ -1,0 +1,36 @@
+<div class="jodi_chat">
+    <div class="table">
+        <div class="thead"> 
+                <span>Mon</span>
+                <span>Tus</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+        </div>
+        <div class="tbody">
+
+            @for(data of reverceData;track data){
+                @if(data.date == 'Monday'){
+                    <div class="track">
+                    
+                        <span class="jodi">{{data.jodi}}</span>
+                        <span class="jodi">{{data.date}}</span>
+    
+                    </div>
+                }@else{
+                    <div class="track">
+                    
+                        <span class="jodi">{{data.jodi}}</span>
+                        <span class="jodi">{{data.date}}</span>
+    
+                    </div>
+                }
+                
+               
+
+            }
+        </div>
+    </div>
+</div>

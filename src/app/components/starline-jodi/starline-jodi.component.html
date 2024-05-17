@@ -1,0 +1,32 @@
+<div class="container_sm">
+<h1>{{name}}</h1>
+<div class="jodi-data table_body">
+    <table class="cus_table table_border">
+            <thead>
+                <tr>
+                    <th>Date :</th>
+                    @for(t of timeBreaks; track t){
+                        <th>{{t}}</th>
+                    }
+                </tr>
+            </thead>
+        <tbody>
+            @for (d of filteredData; track d){
+            <tr>
+                <td>{{d.date}}</td>
+                <td> {{ getValueForDay(d, '0') }} </td>
+                <td> {{ getValueForDay(d, '1') }}</td>
+                <td> {{ getValueForDay(d, '2') }}</td>
+                <td> {{ getValueForDay(d, '3') }}</td>
+                <td> {{ getValueForDay(d, '4') }}</td>
+                <td> {{ getValueForDay(d, '5') }}</td>
+                <td> {{ getValueForDay(d, '6') }}</td>
+                <td> {{ getValueForDay(d, '7') }}</td>
+                <td> {{ getValueForDay(d, '8') }}</td>
+                <td> {{ getValueForDay(d, '9') }}</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</div>
